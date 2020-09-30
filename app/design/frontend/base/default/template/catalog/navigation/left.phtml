@@ -46,7 +46,9 @@
                 <?php foreach ($_categories as $_category): ?>
                     <?php if($_category->getIsActive()): ?>
                     <li>
-                        <a href="<?php echo $this->getCategoryUrl($_category) ?>"<?php if ($this->isCategoryActive($_category)): ?> class="current"<?php endif; ?>><?php echo $this->escapeHtml($_category->getName()) ?></a> (<?php echo $_category->getProductCount() ?>)
+                        <?php // V12 Customisation Start: Don't show the product count on the Category Navigation ?>
+                        <a href="<?php echo $this->getCategoryUrl($_category) ?>"<?php if ($this->isCategoryActive($_category)): ?> class="current"<?php endif; ?>><?php echo $this->escapeHtml($_category->getName()) ?></a> <?php /* (<?php echo $_category->getProductCount() ?>) */ ?>
+                        <?php // V12 Customisation End ?>
                     </li>
                     <?php endif; ?>
                 <?php endforeach ?>

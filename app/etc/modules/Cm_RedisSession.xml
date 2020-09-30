@@ -1,7 +1,9 @@
 <config>
   <modules>
     <Cm_RedisSession>
-      <active>false</active>
+      <!-- V12 Customisation Start: Enable Redis Sessions -->
+      <active>true</active>
+      <!-- V12 Customisation End -->
       <codePool>community</codePool>
     </Cm_RedisSession>
   </modules>
