@@ -53,6 +53,10 @@ $disabledFuncs = array_map('trim', explode(',', strtolower(ini_get('disable_func
 $isShellDisabled = is_array($disabledFuncs) ? in_array('shell_exec', $disabledFuncs) : true;
 $isShellDisabled = (stripos(PHP_OS, 'win') === false) ? $isShellDisabled : true;
 
+// V12 Customisation Start: Override shell_exec detection
+$isShellDisabled = true;
+// V12 Customisation End
+
 try {
     if (stripos(PHP_OS, 'win') === false) {
         $options = getopt('m::');
